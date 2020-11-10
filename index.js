@@ -13,23 +13,30 @@
 
 
 const http = require('http');
+const url = require('url');
 
 let server = http.createServer( (request, response)=>{
-	if(request.url == '/'){
+		let queryObject = url.parse(request.url, true).query;
+		// console.log(queryObject);
 		response.writeHead(200, {'content-type' : 'text/html'});
-		response.write('<html><body><h1> Hello World!</h1><p>This is root page</p></body></html>');
+		response.write(`<html><body><h1> Hello ${queryObject.name}</h1><p>This is root page.  He is ${queryObject.age} years old.</p></body></html>`);
 		response.end();   //ends the response
-	}else if(request.url === '/profile'){
-		response.writeHead(200, {'content-type' : 'text/html'});
-		response.write('<html><body><h1> Hello Profile page!  How are you???</h1><p>This is profile page</p></body></html>');
-		response.end();
 
-	}else{
-		response.writeHead(404, {'content-type':'text/html'});
-		response.write('<html><body><h1> 404 page not found </h1></body></html>');
-		response.end();
+	// if(request.url == '/'){
+	// 	response.writeHead(200, {'content-type' : 'text/html'});
+	// 	response.write('<html><body><h1> Hello World!</h1><p>This is root page</p></body></html>');
+	// 	response.end();   //ends the response
+	// }else if(request.url === '/profile'){
+	// 	response.writeHead(200, {'content-type' : 'text/html'});
+	// 	response.write('<html><body><h1> Hello Profile page!  How are you???</h1><p>This is profile page</p></body></html>');
+	// 	response.end();
+
+	// }else{
+	// 	response.writeHead(404, {'content-type':'text/html'});
+	// 	response.write('<html><body><h1> 404 page not found </h1></body></html>');
+	// 	response.end();
 	
-	}
+	// }
 });
 
 
