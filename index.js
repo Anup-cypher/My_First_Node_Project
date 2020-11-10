@@ -21,7 +21,7 @@ let server = http.createServer( (request, response)=>{
 		response.end();   //ends the response
 	}else if(request.url === '/profile'){
 		response.writeHead(200, {'content-type' : 'text/html'});
-		response.write('<html><body><h1> Hello Profile page!</h1><p>This is profile page</p></body></html>');
+		response.write('<html><body><h1> Hello Profile page!  How are you???</h1><p>This is profile page</p></body></html>');
 		response.end();
 
 	}else{
