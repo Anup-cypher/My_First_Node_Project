@@ -4,7 +4,7 @@
   "description": "First node demo project",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Anup-cypher/My_First_Node_Project/issues"
   },
-  "homepage": "https://github.com/Anup-cypher/My_First_Node_Project#readme"
+  "homepage": "https://github.com/Anup-cypher/My_First_Node_Project#readme",
+  "dependencies": {
+    "mongoose": "^5.10.13"
+  }
 }
